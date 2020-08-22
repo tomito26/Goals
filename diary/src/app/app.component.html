@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="heading">
+    <h3>Diary</h3>
+    <p >Record your daily life experiences</p>
+  </div>
+  <div class="row pt-5">
+    <div class="col-md-6">
+      
+      <div class='card'  *ngFor='let subject of Entry;let i = index'>
+          <div class='card-body'>
+            <h5 class="card-title"  ><span class="tittle" appHighlight>{{subject.title}}</span> <span class="date">{{subject.activityDate|date}}</span></h5>
+            <app-entries class="card-text" *ngIf = 'subject.showEntries' [userEntry]='subject' (removeEntry) = 'deleteEntry($event,i)' class="entrycomponent"></app-entries>
+            <button (click)='toggleEntry(i)' class="btn btn-dark">Show entries</button>
+          </div>
+
+      </div>
+    
+  </div> 
+    <div class="col-md-6">
+      <app-entry-form (addEntry)='addNewEntry($event)'></app-entry-form>
+    </div>
+  </div>
+</div>

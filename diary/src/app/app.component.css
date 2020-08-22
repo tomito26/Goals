@@ -1,0 +1,20 @@
+
+.entrycomponent{
+    background-color: white;
+    height: 30px;
+    width: 30px;
+}
+h5{
+    display: flex;
+    justify-content: space-between;
+}
+.heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-size: 30px;
+    background-color: rgba(0,0,0,0.5)
+  
+}

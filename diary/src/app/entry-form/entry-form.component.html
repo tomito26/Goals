@@ -1,0 +1,17 @@
+<form (ngSubmit)='submitEntry()'  #diaryEntries = 'ngForm'>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Title</label>
+      <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title" [(ngModel)] = 'newEntry.title' #title = 'ngModel'>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Enter Date</label>
+      <input type="date" class="form-control" name='activityDate' id="activityDate" placeholder="Date"[(ngModel)] = 'newEntry.activityDate' #activitydate = 'ngModel'>
+    </div>
+
+    <div class="form-group">
+      <label for="entryDetails">Enter </label>
+      <textarea name="entryDetails" id="entryDetails" name="entryDetails" class="form-control" rows="4" [(ngModel)] = 'newEntry.entryDetails' #entryDetails = 'ngModel'></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

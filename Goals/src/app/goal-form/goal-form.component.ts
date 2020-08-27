@@ -1,5 +1,7 @@
 import { Component, OnInit,Output,EventEmitter} from '@angular/core';
 import{ Goal } from '../goal';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-goal-form',
@@ -11,8 +13,9 @@ export class GoalFormComponent implements OnInit {
   newGoal = new Goal(0,"","",new Date());
   @Output() addGoal = new EventEmitter<Goal>();
 
-    submitGoal(){
+    submitGoal(form: NgForm){
       this.addGoal.emit(this.newGoal)
+      form.resetForm()
     }
 
   constructor() { }

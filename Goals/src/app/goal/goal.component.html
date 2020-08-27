@@ -1,29 +1,36 @@
 
-<div class="container-fluid bg-success">
-    <h1 class="text-center">My Goals</h1>
-    <hr>
-    <div class="row">
-        <div class="col-md-6">
-            <div *ngFor='let goal of goals; let i = index'>
-                <div>
-                    <h6 id={{i}} appStrikethrough>{{goal.name}} due on {{goal.completeDate|date| uppercase}}</h6>
-                    <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
-                </div>
-            
-
-                <div *ngIf='goal.showDescription' >
-                    <app-goal-detail [goal]='goal' (isComplete)='deleteGoal($event,i)' ></app-goal-detail>
+<div class="landing-page">
+    <div class="container-fluid">
+        <ng-progress></ng-progress>
+        <h1 class="text-center">My Goals</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div *ngFor='let goal of goals; let i = index'>
+                    <div>
+                        <h6 id={{i}} appStrikethrough>{{goal.name}} due on {{goal.completeDate|date| uppercase}}</h6>
+                        <button (click)='goToUrl(goal.id)' class="btn btn-primary">View Details</button>
+                        <button class='btn btn-outline-danger' (click)="deleteGoal(i)">Delete Goal</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <app-goal-form (addGoal)="addNewGoal($event)"></app-goal-form>
-        </div>       
+            <div class="col-md-6">
+                <app-goal-form (addGoal)="addNewGoal($event)"></app-goal-form>
+            </div>  
+            <p *ngIf='goals.length>5'>You have too many goals</p> 
+            <div class="row pt-5">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4 ">
+                    <blockquote class="blockquote text-center quote">
+                        <p class="mb-0">{{quote.quote}}</p>
+                        <footer class="blockquote-footer text-grey"><cite>{{quote.author}}</cite></footer>
+                    </blockquote>
+                </div>
+            </div>    
+        
+        </div> 
     
-    </div> 
-   
-    
-    <p *ngIf='goals.length>5'>You have too many goals</p>
-
-
+        
+    </div>
 </div>         

@@ -19,4 +19,14 @@ body{
 /* .landing-page{
     background-image: url(./assets/pexels-thought-catalog-2228585.jpg);
 } */
+body{
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url(./assets/pexels-thought-catalog-2228571.jpg);
+    height: 120vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: white;
+    
+}
 
